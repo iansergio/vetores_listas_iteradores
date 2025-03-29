@@ -15,5 +15,7 @@ public class VetorApp {
         vet.adicionar(33);
         vet.adicionar(42);
         vet.adicionar(54);
+
+        vet.buscaBinaria( vet.getElementos(), 2);
     }
 }

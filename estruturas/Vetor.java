@@ -73,4 +73,37 @@ public class Vetor {
         }
         System.out.println("Item não encontrado");
     }
+
+    // Getter
+    public Integer[] getElementos() {
+        return this.elementos;
+    }
+
+    // Busca binária pelo valor informado.
+    // Posicao    0  1  2  3   4   5   6   7   8   9
+    // Lista --> [2, 7, 9, 12, 16, 21, 27, 33, 42, 54]
+    public Integer buscaBinaria(Integer[] elementos, Integer valor) {
+        int menor = 0;
+        int maior = this.tamanho - 1;
+
+        while (menor <= maior) {
+            int meio = (menor + maior) / 2;
+            if (meio % 2 != 0){
+                meio = Math.round(meio);
+            }
+            int chute = elementos[meio];
+            if (chute == valor) {
+                System.out.println("O número foi encontrado!"); 
+                return meio;
+            }
+            if (chute > valor) {
+                maior = meio - 1;
+            }
+            else {
+                menor = meio + 1;
+            }
+        }
+
+        return null;
+    }
 }
