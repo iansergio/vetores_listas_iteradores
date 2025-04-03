@@ -16,6 +16,13 @@ public class VetorApp {
         vet.adicionar(42);
         vet.adicionar(54);
 
-        vet.buscaBinaria( vet.getElementos(), 2);
+        vet.mostrarElementos();
+        // Pesquisa binária
+        vet.buscaBinaria( vet.getElementos(), 21);
+        
+        // Adicionar elemento ao inicio do vetor
+        vet.mostrarElementos();
+        vet.adicionarAoInicio(999);
+        vet.mostrarElementos();
     }
 }

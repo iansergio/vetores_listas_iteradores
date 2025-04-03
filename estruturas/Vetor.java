@@ -79,9 +79,7 @@ public class Vetor {
         return this.elementos;
     }
 
-    // Busca binária pelo valor informado.
-    // Posicao    0  1  2  3   4   5   6   7   8   9
-    // Lista --> [2, 7, 9, 12, 16, 21, 27, 33, 42, 54]
+    // Busca binária pelo valor informado
     public Integer buscaBinaria(Integer[] elementos, Integer valor) {
         int menor = 0;
         int maior = this.tamanho - 1;
@@ -105,5 +103,22 @@ public class Vetor {
         }
 
         return null;
+    }
+
+    // Inserir um item no início do vetor
+    public void adicionarAoInicio(Integer valor) {
+        int aux;
+        
+        if (this.capacidade == this.tamanho) {
+            this.aumentarCapacidade();
+        }
+        
+        for (int i=0; i<this.tamanho; i++) {
+            aux = this.elementos[i];
+            this.elementos[i] = valor;
+            valor = aux;
+        }
+        this.elementos[this.tamanho] = valor;
+        this.tamanho++;
     }
 }
